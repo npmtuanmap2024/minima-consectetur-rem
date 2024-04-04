@@ -1,0 +1,180 @@
+<!-- To try this example, just open this file in a browser. -->
+<html>
+  <head>
+    <title>Bind Example</title>
+    <script src="../dist/data-bind-script.js"></script>
+    <link rel="stylesheet" type="text/css" href="example.css">
+  </head>
+
+  <body>
+    <h1>Data Binding Examples</h1>
+
+    <div class="directions">
+      <h4>Directions</h4>
+      <p>Open the browser's Console tab, and enter some of the examples.</p>
+      <p>There is a global object defined named <code>obj</code> which you can inspect or edit.</p>
+    </div>
+    <table>
+      <thead>
+        <tr class="table-title">
+          <th>Bind to ...</th>
+          <th>Bound Element</th>
+          <th>Examples to Try at Console</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="bindto"><code>input</code> with type text</td>
+          <td class="element">
+            <div class="title">Age</div>
+            <input id="age" type="text" />
+          </td>
+          <th>obj.age = 42</th>
+        </tr>
+
+        <tr class="even">
+          <td class="bindto"><code>div</code>'s content</td>
+          <td class="element">
+            <div class="title">Description</div>
+            <div class="box" id="description">Bind div's content</div>
+          </td>
+          <th>obj.description = 'foo'</th>
+        </tr>
+  
+        <tr>
+          <td class="bindto"><code>div</code> element atteribute</td>
+          <td class="element">
+            <div class="title">Car's Color</div>
+            <div class="box" id="carColor">Bind div's style</div>
+          </td>
+          <th>obj.carColor = 'background-color:red'</th>
+        </tr>
+  
+        <tr class="even">
+          <td class="bindto"><code>select</code> element</td>
+          <td class="element">
+            <div>
+              <div class="title">State</div>
+              <select id="states">
+                <option value="mi">Michigan</option>
+                <option value="oh">Ohio</option>
+                <option value="ca">California</option>
+              </select>
+            </div>
+          </td>
+          <th>obj.state = ['oh']</th>
+        </tr>
+  
+        <tr>
+          <td class="bindto">multi value <code>select</code> element</td>
+          <td class="element">
+            <div>
+              <div class="title">Countries Lived At (Select all)</div>
+              <div>
+                <select id="countries" size="5" multiple>
+                    <option value="us">USA</option>
+                    <option value="ca">Canada</option>
+                    <option value="mx">Mexico</option>
+                    <option value="fr">France</option>
+                    <option value="sy">Syria</option>
+                </select>
+              </div>
+            </div>
+          </td>
+          <th>obj.countries = ['fr', 'us']</th>
+        </tr>
+  
+        <tr class="even">
+          <td class="bindto"><code>input</code> with type radio</td>
+          <td class="element">
+            <div>
+              <div class="title">Language</div>
+              <div>
+                <input type='radio' name='language' value='a'>Arabic
+                <input type='radio' name='language' value='e' checked>English
+                <input type='radio' name='language' value='f'>French
+              </div>
+            </div>   
+          </td>
+          <th>obj.language = 'a'</th>
+        </tr>
+  
+        <tr>
+          <td class="bindto"><code>input</code> with type checkbox</td>
+          <td class="element">
+            <div>
+              <div class="title">Hobbies</div>
+              <div>
+                <input type="checkbox" class="hobbies" name="read" value='r' checked>Read
+                <input type="checkbox" class="hobbies" name="swim" value='s'>Swim
+                <input type="checkbox" class="hobbies" name="travel">Travel
+              </div>
+            </div>        
+          </td>
+          <th>obj.hobbies = ['s', 'travel']</th>
+        </tr>
+  
+        <tr class="even">
+          <td class="bindto"><code>textarea</code></td>
+          <td class="element">
+            <div id="root1">
+              <div class="title">Pets</div>
+              <div>
+                <textarea id="pets"></textarea>
+              </div>
+            </div>
+          </td>
+          <th>obj.pets = 'dog, cat'</th>
+        </tr>
+
+        <tr class="odd">
+          <td class="bindto"><code>onChange()</code> unbounded property</td>
+          <td class="element">
+            <div class="title">Square Value</div>
+            <div>
+              <span class="changeUnbounded">?</span>
+            </div>
+          </td>
+          <th>obj.squareMe = 2</th>
+        </tr>
+
+        <tr class="even">
+          <td class="bindto"><code>onChange()</code> bounded property</td>
+          <td class="element">
+            <div class="title">Twice Value</div>
+            <div>
+              <input id="twice" type="text" />
+              <span class="changeBounded">?</span>
+            </div>
+          </td>
+          <th>obj.twiceMe = 3</th>
+        </tr>
+
+      </tbody>
+    </table>
+  
+<script>
+
+const obj = bind({prop:'age', sel:'#age'});
+bind({obj, prop:'description', sel:'#description'});
+bind({obj, prop:'carColor', sel:'#carColor', attr:'style'});
+bind({obj, prop:'state', sel:'#states'});
+obj.countries = ['mx'];
+bind({obj, prop:'countries', sel:'#countries'});
+bind({obj, prop:'language', sel:'[name="language"]'});
+bind({obj, prop:'hobbies', sel:'.hobbies'});
+bind({obj, prop:'pets', sel:'#pets', root: document.getElementById('root1')});
+
+bind({obj, prop:'squareMe', onChange: (oldv, newv)=> {
+  document.querySelector('.changeUnbounded').innerText = newv * newv
+}})
+
+bind({obj, prop:'twiceMe', sel:'#twice', onChange: (oldv, newv)=> {
+  document.querySelector('.changeBounded').innerText = newv * 2
+}})
+
+</script>
+
+  </body>
+</html>

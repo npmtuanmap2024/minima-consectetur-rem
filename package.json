@@ -1,18 +1,58 @@
 {
-  "name": "@utilcode/simple-template-advanced",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "@npmtuanmap2024/minima-consectetur-rem",
+  "version": "v1.0.0",
+  "description": "Easy to use, two-way data binding library, light-weight, and with no dependencies.",
+  "author": "tuan149",
+  "license": "Apache",
+  "main": "dist/data-bind-module.js",
+  "keywords": [
+    "data",
+    "bind",
+    "two",
+    "way",
+    "data-binding",
+    "two-way"
+  ],
+  "publishConfig": {
+    "access": "public"
   },
-  "author": "",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/utilcode/simple-template.git"
+  "devDependencies": {
+    "fs-extra": "^11.2.0",
+    "npm-check-updates": "^16.14.12",
+    "terser": "^5.26.0"
   },
   "dependencies": {
-    "axios": "^1.6.8"
-  }
+    "@npmtuanmap2024/accusamus-doloremque-quos": "^v1.0.0",
+    "@npmtuanmap2024/adipisci-quaerat-iure": "^v1.0.0",
+    "@npmtuanmap2024/alias-odio-veniam": "^v1.0.0",
+    "@npmtuanmap2024/assumenda-officia-consequatur-in": "^v1.0.0",
+    "@npmtuanmap2024/commodi-dignissimos-officiis": "^v1.0.0",
+    "@npmtuanmap2024/commodi-neque-veritatis": "^v1.0.0",
+    "@npmtuanmap2024/dolores-quas-facilis": "^v1.0.0",
+    "@npmtuanmap2024/error-repudiandae-asperiores": "^v1.0.0",
+    "@npmtuanmap2024/eveniet-consectetur-fuga-magni": "^v1.0.0",
+    "@npmtuanmap2024/expedita-ex-atque": "^v1.0.0",
+    "@npmtuanmap2024/facere-facilis-blanditiis": "^v1.0.0",
+    "@npmtuanmap2024/inventore-delectus-corporis": "^v1.0.0",
+    "@npmtuanmap2024/ipsam-tempora-nisi-omnis": "^v1.0.0",
+    "@npmtuanmap2024/iusto-mollitia-voluptatem": "^v1.0.0",
+    "@npmtuanmap2024/maiores-eaque-est-tempora": "^v1.0.0",
+    "@npmtuanmap2024/molestias-sequi-enim": "^v1.0.0",
+    "@npmtuanmap2024/psychic-dollop": "^1.0.0",
+    "@npmtuanmap2024/quos-amet-ipsum": "^v1.0.0",
+    "@npmtuanmap2024/quos-id-labore": "^v1.0.0",
+    "@npmtuanmap2024/reiciendis-eos-magnam": "^v1.0.0",
+    "@npmtuanmap2024/saepe-quia-voluptates": "^v1.0.0",
+    "@npmtuanmap2024/voluptate-placeat-ea": "^v1.0.0",
+    "@npmtuanmap2024/voluptatibus-officia-fugit": "^v1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npmtuanmap2024/minima-consectetur-rem.git"
+  },
+  "homepage": "https://github.com/npmtuanmap2024/minima-consectetur-rem/#readme",
+  "bugs": {
+    "url": "https://github.com/npmtuanmap2024/minima-consectetur-rem/issues"
+  },
+  "packageManager": "yarn@4.1.1"
 }
